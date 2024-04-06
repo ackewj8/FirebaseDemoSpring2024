@@ -43,11 +43,10 @@ public class SecondaryController {
                 .setEmail(emailPasswordField.getText())
                 .setPassword(signInPasswordField.getText());
         UserRecord userRecord2;
-        System.out.println(Authenticator.getDefault());
         try {
             userRecord2 = DemoApp.fauth.getUserByEmail(emailPasswordField.getText());
-            System.out.println(DemoApp.getFauth());
             System.out.println(userRecord2);
+            System.out.println("Sign-in successful.");
             switchToPrimary();
         } catch (IOException | FirebaseAuthException e) {
             throw new RuntimeException(e);

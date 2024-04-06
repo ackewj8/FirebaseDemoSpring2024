@@ -1,7 +1,7 @@
 .label
 {
-    -fx-background-color: lavender;
-    -fx-border-color: lime;
+    -fx-background-color: orange;
+    -fx-border-color: purple;
     -fx-text-fill: black;
     -fx-alignment: center;
 }
@@ -20,6 +20,6 @@
 
 .button
 {
-    -fx-background-color: lavender;
-    -fx-border-color: lime;
+    -fx-background-color: cyan;
+    -fx-border-color: green;
 }
