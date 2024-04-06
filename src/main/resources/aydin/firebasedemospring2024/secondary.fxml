@@ -3,12 +3,26 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
 <VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="aydin.firebasedemospring2024.SecondaryController">
     <children>
-        <Label text="Secondary View" />
-        <Button fx:id="secondaryButton" onAction="#switchToPrimary" text="Switch to Primary View" />
+      <Label stylesheets="@CSSStyle.css" text="Welcome!">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <TextField fx:id="emailTextField" promptText="Email Address" stylesheets="@CSSStyle.css" />
+      <TextField fx:id="nameTextField" promptText="Display Name" stylesheets="@CSSStyle.css" />
+      <TextField fx:id="phoneTextField" promptText="Phone Number" stylesheets="@CSSStyle.css" />
+      <TextField fx:id="passwordTextField" promptText="Password" stylesheets="@CSSStyle.css" />
+      <Button fx:id="registrationButton" mnemonicParsing="false" onAction="#registerButtonClicked" stylesheets="@CSSStyle.css" text="Register" />
+      <TextField fx:id="emailPasswordField" promptText="Email Address" stylesheets="@CSSStyle.css" />
+      <TextField fx:id="signInPasswordField" promptText="Password" stylesheets="@CSSStyle.css" />
+      <Button fx:id="SigninButton" mnemonicParsing="false" onAction="#signInButtonClicked" stylesheets="@CSSStyle.css" text="Sign In" />
+        <Button fx:id="secondaryButton" onAction="#switchToPrimary" stylesheets="@CSSStyle.css" text="Switch to Primary View" />
     </children>
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />

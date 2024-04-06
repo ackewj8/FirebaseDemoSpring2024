@@ -43,6 +43,10 @@ public class DemoApp extends Application {
         stage.show();
     }
 
+    public static FirebaseAuth getFauth() {
+        return fauth;
+    }
+
     static void setRoot(String fxml) throws IOException {
         scene.setRoot(loadFXML(fxml));
     }

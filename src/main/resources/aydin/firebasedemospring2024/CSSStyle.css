@@ -1,0 +1,25 @@
+.label
+{
+    -fx-background-color: lavender;
+    -fx-border-color: lime;
+    -fx-text-fill: black;
+    -fx-alignment: center;
+}
+
+.text-field
+{
+    -fx-background-color: lavender;
+    -fx-border-color: lime;
+}
+
+.text-area
+{
+    -fx-background-color: lavender;
+    -fx-border-color: lime;
+}
+
+.button
+{
+    -fx-background-color: lavender;
+    -fx-border-color: lime;
+}

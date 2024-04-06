@@ -23,6 +23,7 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 
 public class PrimaryController {
+    public TextField phoneTextField;
     @FXML
     private TextField ageTextField;
 
@@ -98,10 +99,11 @@ public class PrimaryController {
                 for (QueryDocumentSnapshot document : documents)
                 {
                     outputTextArea.setText(outputTextArea.getText()+ document.getData().get("Name")+ " , Age: "+
-                            document.getData().get("Age")+ " \n ");
+                            document.getData().get("Age")+ " , Phone: "+document.getData().get("Phone")+" \n ");
                     System.out.println(document.getId() + " => " + document.getData().get("Name"));
                     person  = new Person(String.valueOf(document.getData().get("Name")),
-                            Integer.parseInt(document.getData().get("Age").toString()));
+                            Integer.parseInt(document.getData().get("Age").toString()),
+                            String.valueOf(document.getData().get("Phone")));
                     listOfUsers.add(person);
                 }
             }
@@ -121,11 +123,11 @@ public class PrimaryController {
 
     public boolean registerUser() {
         UserRecord.CreateRequest request = new UserRecord.CreateRequest()
-                .setEmail("user222@example.com")
+                .setEmail("user201@example.com")
                 .setEmailVerified(false)
                 .setPassword("secretPassword")
                 .setPhoneNumber("+11234567890")
-                .setDisplayName("John Doe")
+                .setDisplayName("Jane Doe")
                 .setDisabled(false);
 
         UserRecord userRecord;
@@ -150,6 +152,7 @@ public class PrimaryController {
         Map<String, Object> data = new HashMap<>();
         data.put("Name", nameTextField.getText());
         data.put("Age", Integer.parseInt(ageTextField.getText()));
+        data.put("Phone", phoneTextField.getText());
 
         //asynchronously write data
         ApiFuture<WriteResult> result = docRef.set(data);
